@@ -1,21 +1,17 @@
 const router = require('express').Router();
 const User = require('../models/User');
-var bcrypt = require('bcryptjs');
+const encryptUser = require('../middleware/user-encryption');
+const checkEmailUnique = require('../middleware/user-email-unique');
 const { registerValidation } = require('../middleware/user-validation');
 
-router.post('/register', registerValidation, async (req, res, next) => {
-    const { name, email, password } = req.body;
 
-    const emailExists = await User.findOne({ email });
-    if (emailExists) return next(new Error('Email already exists'));
-    
-    const salt = await bcrypt.genSalt(10);
-    const hashPass = await bcrypt.hash(password, salt);
+router.post('/register', checkEmailUnique, registerValidation, encryptUser, async (req, res, next) => {
+    const { name, email, password } = req.body;
     
     try {
-        const user = new User({ name, email, password: hashPass });
-        const savedUser = await user.save();
-        res.status(201).json(savedUser);
+        const user = new User({ name, email, password });
+        const { _id } = await user.save();
+        res.status(201).json({ _id });
     } catch (e) {
         next(e);
     }
