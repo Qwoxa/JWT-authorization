@@ -26,12 +26,12 @@ app.use((err, req, res, next) => {
    if (err.headerSent) {
       next(err);
    }
+   const statusCode = err.statusCode || 500;
 
-
-   res.status(500).json({
+   res.status(statusCode).json({
       error: {
          message: err.message,
-         statusCode: err.statusCode || 500
+         statusCode
       }
    });
 });
