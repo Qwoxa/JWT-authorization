@@ -3,7 +3,7 @@ This is a simple JWT authorization with Express.js and MongoDB.
 
 ## Getting started
 1. Clone the repo
-```bash
+```git
 git clone git@github.com:Qwoxa/JWT-authorization.git
 ```
 
@@ -30,7 +30,7 @@ npm start
 
 ## Request & Response Examples
 ### POST /api/user/register
-Request
+Request body
 ```json
 {
     "name": "Nick",
@@ -39,7 +39,7 @@ Request
 }
 ```
 
-Response
+Response body
 ```json
 {
     "_id": "5da031610db20914b472db34"
@@ -47,7 +47,7 @@ Response
 ```
 
 ### POST /api/user/login
-
+Request body
 ```json
 {
     "email": "qwoxa1@gmail.com",
@@ -55,9 +55,9 @@ Response
 }
 ```
 
-Response
+Response body
 ```json
 {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGEwMzE2MTBkYjIwOTE0YjQ3MmRiMzQiLCJuYW1lIjoiTmljayIsImVtYWlsIjoicXdveGExQGdtYWlsLmNvbSIsImlhdCI6MTU3MDc3OTY0MiwiZXhwIjoxNTcwODA0ODQyfQ.wWK2P4pW13emYg2KypFVXRVRC30t9YGnn61jv7HK3Gg"
-    }
+}
 ```
