@@ -32,5 +32,5 @@ module.exports.login = async (req, res, next) => {
     },
     process.env.TOKEN_SECRET,
     { expiresIn: '7h' });
-    res.header('Authorization', token).send(token);
+    res.header('Authorization', token).json({ token });
 }
