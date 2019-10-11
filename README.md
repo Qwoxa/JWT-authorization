@@ -3,7 +3,7 @@ This is a simple JWT authorization with Express.js and MongoDB.
 
 ## Getting started
 1. Clone the repo
-```git
+```bash
 git clone git@github.com:Qwoxa/JWT-authorization.git
 ```
 
