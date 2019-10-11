@@ -27,10 +27,11 @@ app.use((err, req, res, next) => {
       next(err);
    }
 
+
    res.status(500).json({
       error: {
          message: err.message,
-         statusCode: 500
+         statusCode: err.statusCode || 500
       }
    });
 });

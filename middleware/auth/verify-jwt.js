@@ -1,8 +1,9 @@
 const jwt = require('jsonwebtoken');
+const createError = require('http-errors')
 
 const verify = (req, res, next) => {
     const token = req.header('Authorization');
-    if (!token) return  // TODO 401
+    if (!token) return next(createError(401, 'Access denied'));
     // TODO bearer
 
     try {
@@ -10,7 +11,7 @@ const verify = (req, res, next) => {
         req.user = verified;
         next();
     } catch(err) {
-        return next(new Error('Invalid token')); // TODO 400
+        return next(createError(400, 'Invalid token'));
     }
 };
 
