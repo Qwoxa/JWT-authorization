@@ -61,3 +61,8 @@ Response body
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGEwMzE2MTBkYjIwOTE0YjQ3MmRiMzQiLCJuYW1lIjoiTmljayIsImVtYWlsIjoicXdveGExQGdtYWlsLmNvbSIsImlhdCI6MTU3MDc3OTY0MiwiZXhwIjoxNTcwODA0ODQyfQ.wWK2P4pW13emYg2KypFVXRVRC30t9YGnn61jv7HK3Gg"
 }
 ```
+
+## Credits
+I am giving credits to Academind and Dev Ev. They helpled a lot:  
+https://www.youtube.com/watch?v=0oXYLzuucwE&list=PL55RiY5tL51q4D-B63KBnygU6opNPFk_q  
+https://www.youtube.com/watch?v=2jqok-WgelI  
